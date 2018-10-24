@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>gaoxiong-security</artifactId>
+        <groupId>com.gaoxiong</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>gaoxiong-security-app</artifactId>
+    <description>处理app安全</description>
+    <dependencies>
+        <dependency>
+            <groupId>com.gaoxiong</groupId>
+            <artifactId>gaoxiong-security-core</artifactId>
+            <version>${gaoxiong.security.version}</version>
+        </dependency>
+    </dependencies>
+</project>

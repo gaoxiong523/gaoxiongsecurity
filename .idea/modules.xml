@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/gaoxiong-security/gaoxiong-security.iml" filepath="$PROJECT_DIR$/gaoxiong-security/gaoxiong-security.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gaoxiong-security/gaoxiong-security-browser/gaoxiong-security-browser.iml" filepath="$PROJECT_DIR$/gaoxiong-security/gaoxiong-security-browser/gaoxiong-security-browser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gaoxiong-security/gaoxiong-security-core/gaoxiong-security-core.iml" filepath="$PROJECT_DIR$/gaoxiong-security/gaoxiong-security-core/gaoxiong-security-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gaoxiong-security/gaoxiong-security-app/gaoxiongsecurityapp.iml" filepath="$PROJECT_DIR$/gaoxiong-security/gaoxiong-security-app/gaoxiongsecurityapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gaoxiong-security/gaoxiong-security-demo/gaoxiongsecuritydemo.iml" filepath="$PROJECT_DIR$/gaoxiong-security/gaoxiong-security-demo/gaoxiongsecuritydemo.iml" />
+    </modules>
+  </component>
+</project>

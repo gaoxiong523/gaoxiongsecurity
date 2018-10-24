@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="gaoxiong-security-browser" />
+        <module name="gaoxiong-security-core" />
+        <module name="gaoxiongsecurityapp" />
+        <module name="gaoxiongsecuritydemo" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="gaoxiong-security" target="1.8" />
+      <module name="gaoxiong-security-browser" target="1.8" />
+      <module name="gaoxiong-security-core" target="1.8" />
+      <module name="gaoxiongsecurityapp" target="1.8" />
+      <module name="gaoxiongsecuritydemo" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
