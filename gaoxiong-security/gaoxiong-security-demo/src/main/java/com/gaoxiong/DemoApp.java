@@ -1,9 +1,11 @@
+package com.gaoxiong;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * @author gaoxiong
- * @ClassName DemoApp
+ * @ClassName com.gaoxiong.DemoApp
  * @Description TODO
  * @date 2018/10/23 0:49
  */
