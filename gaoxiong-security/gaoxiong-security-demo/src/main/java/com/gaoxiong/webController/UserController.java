@@ -1,7 +1,10 @@
 package com.gaoxiong.webController;
 
 import com.gaoxiong.DTO.User;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,5 +30,10 @@ public class UserController {
         list.add(jerry);
         System.out.println("进入查询用户服务");
         return list;
+    }
+    @GetMapping("user/{id}")
+    @ApiOperation(value = "查询单个用户的服务")
+    public User queryById(@ApiParam(value = "用户主键ID") @PathVariable String id ){
+        return new User("tom","123455" );
     }
 }

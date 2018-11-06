@@ -14,3 +14,14 @@ spring security 相关学习
 然后Aspect >> 具体的请求参数都可以获得到
 然后是Controller
 branch
+多线程异步处理,提高rest服务的性能
+```java
+Callable<T>
+DeferredResult<T>
+```
+需要另外单独配置,线程池,如果不配置的话,默认使用的是spring的默认的SimpleAsyncTaskExecutor
+
+spring security 主要的三个接口
+###处理用户信息获取逻辑  UserDetailsService
+###处理用户校验逻辑      UserDetails
+###处理密码加密解密      PasswordEncoder
