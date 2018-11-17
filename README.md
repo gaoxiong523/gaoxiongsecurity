@@ -47,3 +47,10 @@ spring security 主要的三个接口
         return userDetails;
     }
 ```
+```java
+org.springframework.social.connect.web.SessionStrategy;
+
+```
+spring操作session 的工具类
+ private SessionStrategy sessionStrategy = new HttpSessionSessionStrategy();
+ 增量的方式适应变化

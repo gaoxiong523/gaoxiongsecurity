@@ -68,11 +68,6 @@ public class ImageCode {
     }
 
     public boolean isExpired () {
-
-        if (LocalDateTime.now().isAfter(this.expireTime)) {
-            return false;
-        } else {
-            return true;
-        }
+        return LocalDateTime.now().isAfter(this.expireTime);
     }
 }

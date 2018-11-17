@@ -3,6 +3,7 @@ package com.gaoxiong.security.browser.authentication;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gaoxiong.properties.LoginType;
 import com.gaoxiong.properties.SecurityProperties;
+import com.gaoxiong.security.browser.support.SimpleResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.AuthenticationException;
@@ -33,7 +34,7 @@ public class GaoxiongAuthenticationFailHandler extends SimpleUrlAuthenticationFa
             log.error(objectMapper.writeValueAsString(exception));
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             response.setContentType("application.json;charset=UTF-8");
-            response.getWriter().write(objectMapper.writeValueAsString(exception));
+            response.getWriter().write(objectMapper.writeValueAsString(new SimpleResponse(exception.getMessage())));
         } else {
             super.onAuthenticationFailure(request, response, exception);
         }
