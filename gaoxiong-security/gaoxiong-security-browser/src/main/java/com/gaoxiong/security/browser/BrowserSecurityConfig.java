@@ -1,5 +1,9 @@
 package com.gaoxiong.security.browser;
 
+import com.gaoxiong.properties.SecurityProperties;
+import com.gaoxiong.security.browser.authentication.GaoxiongAuthenticationFailHandler;
+import com.gaoxiong.security.browser.authentication.GaoxiongAuthenticationSuccessHandler;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -7,6 +11,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.AuthenticationFailureHandler;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 /**
  * @author gaoxiong
@@ -16,14 +22,28 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  */
 @Configuration
 public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
+    @Autowired
+    private SecurityProperties securityProperties;
+//    @Autowired
+//    private AuthenticationSuccessHandler authenticationSuccessHandler;
+
     @Override
     protected void configure ( HttpSecurity http ) throws Exception {
         http.formLogin()
-                .loginPage("/template/login.html")
+                .loginPage("/authentication/require")
+                .loginProcessingUrl("/authentication/form")
+                .successHandler(authenticationSuccessHandler())
+                .failureHandler(authenticationFailureHandler())
+                .permitAll()
                 .and()
                 .authorizeRequests()
+                .antMatchers("/template/login.html","/code/image",securityProperties.getBrowserProperties().getLoginPage())
+                .permitAll()
                 .anyRequest()
-                .authenticated();
+                .authenticated()
+                .and()
+                .csrf().
+                disable();
 
     }
 
@@ -32,9 +52,18 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
         return new MyUserDetailService();
     }
 
-
     @Bean
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
+
+    @Bean
+    public AuthenticationSuccessHandler authenticationSuccessHandler(){
+        return new GaoxiongAuthenticationSuccessHandler();
+    }
+    @Bean
+    public AuthenticationFailureHandler authenticationFailureHandler(){
+        return new GaoxiongAuthenticationFailHandler();
+    }
+
 }

@@ -13,7 +13,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @SpringBootApplication
 @EnableSwagger2
-@EnableWebSecurity(debug = true)
+//@EnableWebSecurity(debug = true)
 public class DemoApp {
     public static void main ( String[] args ) {
         SpringApplication.run(DemoApp.class,args);

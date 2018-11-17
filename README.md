@@ -25,3 +25,25 @@ spring security 主要的三个接口
 ###处理用户信息获取逻辑  UserDetailsService
 ###处理用户校验逻辑      UserDetails
 ###处理密码加密解密      PasswordEncoder
+
+自定义登陆页面 http.formLogin().loginPage("/***)
+自定义登录成功处理 实现 接口 AuthenticationSuccessHandler
+自定义失败处理 AuthenticationFailureHandler
+```java
+ /**
+     * 三种获得当前已登录用户信息的方法
+     * @return
+     */
+    @RequestMapping("/me")
+    public Object getCurrentUser(){
+        return SecurityContextHolder.getContext().getAuthentication();
+    }
+    @RequestMapping("/me1")
+    public Object getCurrentUser1( Authentication authentication ){
+        return authentication;
+    }
+    @RequestMapping("/me2")
+    public Object getCurrentUser2( @AuthenticationPrincipal UserDetails userDetails ){
+        return userDetails;
+    }
+```
