@@ -9,8 +9,34 @@
     <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/css/style.css">
+    <style type="text/css">
+        body{
+            background: url("../../../../../gaoxiong-security-demo/src/main/resources/img/1.jpg");
+            animation-name:myfirst;
+            animation-duration:12s;
+            /*变换时间*/
+            animation-delay:2s;
+            animation-timing-function: ease-in-out;
+            /*动画开始时间*/
+            animation-iteration-count:infinite;
+            /*下一周期循环播放*/
+            animation-play-state:running;
+            /*动画开始运行*/
+        }
+        @keyframes myfirst
+        {
+            0%   {background:url("../../../../../gaoxiong-security-demo/src/main/resources/img/1.jpg");}
+            34%  {background:url("../../../../../gaoxiong-security-demo/src/main/resources/img/2.jpg");}
+            67%  {background:url("../../../../../gaoxiong-security-demo/src/main/resources/img/3.jpg");}
+            100% {background:url("../../../../../gaoxiong-security-demo/src/main/resources/img/1.jpg");}
+        }
+        .form{background: rgba(255,255,255,0.2);width:400px;margin:120px auto;}
+        /*阴影*/
+        .fa{display: inline-block;top: 27px;left: 6px;position: relative;color: #ccc;}
+        input[type="text"],input[type="password"]{padding-left:26px;}
+        .checkbox{padding-left:21px;}
 
-
+    </style>
 
 </head>
 <body>
